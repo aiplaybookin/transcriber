@@ -1,0 +1,397 @@
+<title>Lap Transcriber Privacy Policy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* layout: single-column reading document, generous rhythm, anchor-linked contents */
+    --bg: #f5f6f9;
+    --surface: #ffffff;
+    --fg: #1b2230;
+    --muted: #5c6577;
+    --accent: #2c5aa0;
+    --accent-soft: #e8eefb;
+    --border: #e1e4ea;
+    --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10141c;
+      --surface: #171c27;
+      --fg: #e8eaf0;
+      --muted: #99a2b4;
+      --accent: #7aa7e6;
+      --accent-soft: #1d2a40;
+      --border: #2a3142;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10141c;
+    --surface: #171c27;
+    --fg: #e8eaf0;
+    --muted: #99a2b4;
+    --accent: #7aa7e6;
+    --accent-soft: #1d2a40;
+    --border: #2a3142;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+
+  header.doc-header {
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 600;
+    margin: 8px 0 10px;
+    text-wrap: balance;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .summary {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 28px 0 8px;
+  }
+
+  .summary h2 {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+
+  .summary ul {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+  }
+
+  .summary li {
+    font-size: 15px;
+  }
+
+  nav.toc {
+    margin: 28px 0 8px;
+    padding: 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    columns: 2;
+    column-gap: 24px;
+    font-size: 14px;
+  }
+
+  nav.toc li {
+    break-inside: avoid;
+    margin-bottom: 6px;
+  }
+
+  nav.toc a {
+    color: var(--fg);
+    text-decoration: none;
+  }
+
+  nav.toc a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  section {
+    margin-top: 40px;
+    scroll-margin-top: 16px;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  h2 .num {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-body);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 20px 0 6px;
+  }
+
+  p {
+    margin: 10px 0;
+    font-size: 15.5px;
+  }
+
+  ul, ol.plain {
+    margin: 10px 0;
+    padding-left: 22px;
+  }
+
+  li {
+    margin: 6px 0;
+    font-size: 15.5px;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 14px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14.5px;
+    min-width: 480px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--muted);
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+  }
+
+  .pill {
+    display: inline-block;
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 2px 10px;
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+
+  .callout {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+
+  .fill {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  a { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    nav.toc ol { columns: 1; }
+  }
+</style>
+
+<div class="page">
+  <header class="doc-header">
+    <div class="eyebrow">Lap Transcriber</div>
+    <h1>Privacy Policy</h1>
+    <div class="meta">Last updated: Nov 9, 2026 &nbsp;·&nbsp; Effective for all users of the Lap Transcriber app</div>
+  </header>
+
+  <div class="summary">
+    <h2>In short</h2>
+    <ul>
+      <li>Your audio is sent to our transcription provider to produce text, then <strong>discarded</strong> — we never store the audio itself.</li>
+      <li>We keep the <strong>text</strong> (transcripts and session details) in the cloud, tied to your Apple sign-in, so your history follows you across your devices.</li>
+      <li>We don't collect your name, email, or any Apple profile information — only Apple's opaque per-app user identifier.</li>
+      <li>You can delete any session at any time, or delete your entire account and all cloud data from Settings.</li>
+      <li>We don't sell your data, run ads, or use third-party trackers.</li>
+    </ul>
+  </div>
+
+  <nav class="toc">
+    <ol>
+      <li><a href="#information-we-collect">Information we collect</a></li>
+      <li><a href="#how-we-use-it">How we use information</a></li>
+      <li><a href="#third-parties">Third-party service providers</a></li>
+      <li><a href="#retention">Data retention</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#your-choices">Your choices and rights</a></li>
+      <li><a href="#recording-others">Recording other people</a></li>
+      <li><a href="#children">Children's privacy</a></li>
+      <li><a href="#changes">Changes to this policy</a></li>
+      <li><a href="#contact">Contact us</a></li>
+    </ol>
+  </nav>
+
+  <section id="information-we-collect">
+    <h2><span class="num">01</span> Information we collect</h2>
+    <p>Lap Transcriber is a recording and transcription app. Here is exactly what we collect, and — just as importantly — what we don't.</p>
+
+    <h3>Audio</h3>
+    <p>While you record, short audio clips ("laps") are sent to our backend and forwarded to our transcription provider to generate a text transcript. The audio is held only in memory for the length of that one request and is never written to disk or any permanent storage, by us or on our servers. Once a transcript is produced, the audio file on your device is also deleted.</p>
+
+    <h3>Transcripts and session details</h3>
+    <p>The text transcript of each lap, along with session metadata — a title, start and end times, and lap boundaries — is stored in our cloud database, associated with your account, so your history can sync across your devices and survive a phone switch.</p>
+
+    <h3>Account identifier</h3>
+    <p>You sign in with <strong>Sign in with Apple</strong>. We request no profile information — not your name, not your email, not even Apple's private relay email. The only thing we store is the opaque, per-app identifier Apple issues for your account, which cannot be used to look up who you are outside our systems.</p>
+
+    <h3>Device attestation data</h3>
+    <p>To prevent abuse of our shared transcription quota, your device participates in Apple's App Attest program, which proves requests come from a genuine, untampered copy of the app. This exchanges a cryptographic device key and counter with our servers — no personal or device-identifying information beyond what's needed for that verification.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>We do <strong>not</strong> collect</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Name or email address</td><td><span class="pill">Not collected</span></td></tr>
+          <tr><td>Precise location</td><td><span class="pill">Not collected</span></td></tr>
+          <tr><td>Contacts</td><td><span class="pill">Not collected</span></td></tr>
+          <tr><td>Advertising identifiers</td><td><span class="pill">Not collected</span></td></tr>
+          <tr><td>Third-party analytics or tracking SDKs</td><td><span class="pill">Not used</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="how-we-use-it">
+    <h2><span class="num">02</span> How we use information</h2>
+    <ul>
+      <li><strong>Transcription</strong> — audio is sent to our transcription provider solely to produce the text you see in the app.</li>
+      <li><strong>Sync and restore</strong> — your transcripts and session details are stored so they appear automatically when you sign in on a new device.</li>
+      <li><strong>Abuse prevention</strong> — we use rate limits and device attestation to keep the shared transcription service available and prevent misuse.</li>
+      <li><strong>Product improvement</strong> — on a schedule, we export a copy of transcription metadata (language, length, success/failure — never your Apple identifier in readable form) for pattern analysis. See "Data retention" below for how this is protected.</li>
+    </ul>
+  </section>
+
+  <section id="third-parties">
+    <h2><span class="num">03</span> Third-party service providers</h2>
+    <p>We share the minimum necessary data with two service providers to make the app work:</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Provider</th><th>Purpose</th><th>Data shared</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Apple</td><td>Sign in with Apple, App Attest</td><td>Identity token exchange, device attestation — handled by Apple's own frameworks on your device</td></tr>
+          <tr><td>Google (Gemini API)</td><td>Speech-to-text transcription</td><td>The audio of each lap, for the duration of that one request</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>We don't control how Google's API handles data on their end beyond what their terms of service specify; we encourage you to review <a href="https://ai.google.dev/gemini-api/terms" target="_blank" rel="noopener">Google's Gemini API terms</a> if you'd like details on their side of this.</p>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">04</span> Data retention</h2>
+    <ul>
+      <li><strong>Audio</strong> — never persisted; discarded immediately after transcription, both server-side and on your device.</li>
+      <li><strong>Transcripts and sessions</strong> — kept until you delete that session, or delete your account.</li>
+      <li><strong>Analytics export</strong> — a separate, de-identified copy (your account identifier is one-way hashed, so it can't be reversed back to your account) used only for aggregate pattern analysis, automatically deleted after 12 months.</li>
+    </ul>
+  </section>
+
+  <section id="security">
+    <h2><span class="num">05</span> Security</h2>
+    <ul>
+      <li>All network traffic between the app and our servers uses HTTPS/TLS.</li>
+      <li>Stored data is encrypted at rest.</li>
+      <li>Your authentication tokens are stored in your device's Keychain, protected by your device's own security, and set to be accessible only while your device is unlocked.</li>
+      <li>Access to production data is limited to the developer operating this service.</li>
+      <li>We maintain rate limits and automated safeguards (including a kill switch) to contain abuse or unexpected cost/usage spikes.</li>
+    </ul>
+  </section>
+
+  <section id="your-choices">
+    <h2><span class="num">06</span> Your choices and rights</h2>
+    <ul>
+      <li><strong>Delete a session</strong> — swipe to delete any session from your History at any time.</li>
+      <li><strong>Delete your account and all cloud data</strong> — available in Settings. This permanently removes every record associated with your account from our servers and cannot be undone.</li>
+      <li><strong>Sign out</strong> — stops syncing; data already stored in the cloud remains until you delete it.</li>
+    </ul>
+  </section>
+
+  <section id="recording-others">
+    <h2><span class="num">07</span> Recording other people</h2>
+    <p>Lap Transcriber records audio of whatever conversation you point your device at. Some places — including several U.S. states — legally require the consent of everyone present before a conversation is recorded. The app shows a one-time reminder of this the first time you use it, but <strong>it's your responsibility</strong>, not ours, to get that consent before you record someone else. This policy covers how we handle data you choose to record; it doesn't grant you a legal right to record anyone.</p>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">08</span> Children's privacy</h2>
+    <p>Lap Transcriber is not directed at children under 13, and we do not knowingly collect information from children under 13. If you believe a child has provided us with data, contact us using the details below and we'll remove it.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">09</span> Changes to this policy</h2>
+    <p>If we make material changes to this policy, we'll update the "last updated" date above. Continued use of the app after a change means you accept the revised policy.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">10</span> Contact us</h2>
+    <p>Questions about this policy or your data? Reach us at <a href="mailto:vikash.kr.117@gmail.com">vikash.kr.117@gmail.com</a>.</p>
+    <p style="color: var(--muted); font-size: 14px;">Developer: Vikash Kumar</p>
+  </section>
+
+  <footer>
+    Lap Transcriber Privacy Policy
+  </footer>
+</div>
